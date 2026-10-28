@@ -5,13 +5,13 @@
     "key": "openbot",
     "nameCn": "OpenBot",
     "repoName": "openbot-deploy-guide",
-    "oneLiner": "2.6k stars，PolyForm 非商业许可，给每个 Agent 独立工作区、消息队列与内置浏览器",
+    "oneLiner": "2.8k stars，PolyForm 非商业许可，给每个 Agent 独立工作区、消息队列与内置浏览器",
     "officialRepo": "https://github.com/nightly-labs/openbot",
     "officialDocs": "https://github.com/nightly-labs/openbot#install",
-    "stars": "2.6k",
+    "stars": "2.8k",
     "license": "PolyForm Noncommercial 1.0.0",
     "highlights": [
-      "2.6k stars：2026-08 建仓，属于早期但增长快",
+      "2.8k stars：2026-08 建仓，属于早期但增长快",
       "本地优先：数据和工作区都在自己电脑上",
       "多 Agent 协作：Agent 之间能发消息、回帖、传文件",
       "任务队列：FIFO 排队，支持暂停、恢复、取消、崩溃恢复",
@@ -21,11 +21,11 @@
     "mcpSupport": "OpenBot 不是 MCP server，通过 ACP 与各家 CLI Agent 对接；本仓库只负责安装，不注册 MCP。",
     "webuiUrl": "",
     "adapterPorts": "",
-    "collectedAt": "2026-10-27",
+    "collectedAt": "2026-10-28",
     "verification": [
       [
-        "仓库元数据核对：2,615 stars、262 forks、2026-08-12 建仓",
-        "已核对 2026-10-27"
+        "仓库元数据核对：2,845 stars、262 forks、2026-08-12 建仓",
+        "已核对 2026-10-28"
       ],
       [
         "许可证核对：README 徽章与 LICENSE 均为 PolyForm Noncommercial 1.0.0（API 返回 NOASSERTION）",

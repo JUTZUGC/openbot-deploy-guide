@@ -1,6 +1,6 @@
 ﻿# OpenBot 桌面安装包脚本（第三方指南）——按官方文档封装
 # 官方文档：https://github.com/nightly-labs/openbot#install
-# 更新日期：2026-10-27
+# 更新日期：2026-10-28
 # 类型：binary
 $ErrorActionPreference = 'Stop'
 Set-Location -Path $PSScriptRoot
