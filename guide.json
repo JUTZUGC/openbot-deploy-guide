@@ -1,0 +1,113 @@
+{
+  "owner": "JUTZUGC",
+  "code": "JUTZUGC",
+  "project": {
+    "key": "openbot",
+    "nameCn": "OpenBot",
+    "repoName": "openbot-deploy-guide",
+    "oneLiner": "2.6k stars，PolyForm 非商业许可，给每个 Agent 独立工作区、消息队列与内置浏览器",
+    "officialRepo": "https://github.com/nightly-labs/openbot",
+    "officialDocs": "https://github.com/nightly-labs/openbot#install",
+    "stars": "2.6k",
+    "license": "PolyForm Noncommercial 1.0.0",
+    "highlights": [
+      "2.6k stars：2026-08 建仓，属于早期但增长快",
+      "本地优先：数据和工作区都在自己电脑上",
+      "多 Agent 协作：Agent 之间能发消息、回帖、传文件",
+      "任务队列：FIFO 排队，支持暂停、恢复、取消、崩溃恢复",
+      "内置浏览器：Agent 能打开页面并操作",
+      "多引擎：Codex、Claude Code、Grok、OpenCode、Gemini、Cursor、Cline 都能接"
+    ],
+    "mcpSupport": "OpenBot 不是 MCP server，通过 ACP 与各家 CLI Agent 对接；本仓库只负责安装，不注册 MCP。",
+    "webuiUrl": "",
+    "adapterPorts": "",
+    "collectedAt": "2026-10-27",
+    "verification": [
+      [
+        "仓库元数据核对：2,615 stars、262 forks、2026-08-12 建仓",
+        "已核对 2026-10-27"
+      ],
+      [
+        "许可证核对：README 徽章与 LICENSE 均为 PolyForm Noncommercial 1.0.0（API 返回 NOASSERTION）",
+        "已核对 2026-10-27"
+      ],
+      [
+        "GitHub Trending 日榜 +777",
+        "已核对 2026-10-27"
+      ],
+      [
+        "Release v0.52.1 核对 Windows 包 259.3 MB，SHA256 574b099f...015d7266",
+        "已核对 2026-10-27"
+      ],
+      [
+        "README 确认七个引擎接入方式与默认 danger-full-access 警告",
+        "已核对 2026-10-27"
+      ],
+      [
+        "未实测安装与多 Agent 协作",
+        "说明 2026-10-27"
+      ]
+    ],
+    "deploy": {
+      "type": "binary",
+      "steps": [
+        "mkdir -p ~/openbot && cd ~/openbot",
+        "curl -fL -o OpenBot-setup.exe \"https://github.com/nightly-labs/openbot/releases/download/v0.52.1/OpenBot-0.52.1-x64.exe\"",
+        "echo \"574b099f2e56764e437f7a89f511de8c591f328ad23c915c6e0ed32f015d7266  OpenBot-setup.exe\" | shasum -a 256 -c -",
+        "echo \"校验通过：运行安装包，首次启动会要求确认权限\""
+      ],
+      "stepsPs": [
+        "New-Item -ItemType Directory -Force -Path \"$env:USERPROFILE\\openbot\" | Out-Null",
+        "Set-Location \"$env:USERPROFILE\\openbot\"",
+        "curl.exe -L --fail -o OpenBot-setup.exe \"https://github.com/nightly-labs/openbot/releases/download/v0.52.1/OpenBot-0.52.1-x64.exe\"",
+        "if ((Get-FileHash OpenBot-setup.exe -Algorithm SHA256).Hash.ToLower() -ne '574b099f2e56764e437f7a89f511de8c591f328ad23c915c6e0ed32f015d7266') { throw 'SHA256 校验失败，请重新下载' }",
+        "Start-Process -FilePath (Join-Path $PWD 'OpenBot-setup.exe')"
+      ],
+      "source": "https://github.com/nightly-labs/openbot/releases/tag/v0.52.1"
+    },
+    "pitfalls": [
+      "启动被拦：Windows SmartScreen 选「更多信息 → 仍要运行」",
+      "Agent 乱改文件：先备份，或只在专门的测试目录里跑",
+      "引擎连不上：确认对应 CLI 已安装并登录，且在 PATH 里",
+      "Linux 起不来：按官方说明装 AppArmor 配置，别用 `--no-sandbox`",
+      "本地模型没识别：确认 Ollama / LM Studio 正在监听默认端口",
+      "商业用途：当前许可禁止，需先联系作者拿授权"
+    ]
+  },
+  "gate": {
+    "allow": [
+      "dumate"
+    ],
+    "label": "百度搭子",
+    "url": "https://www.dumate.cn/",
+    "guideUrl": "https://github.com/JUTZUGC/openbot-deploy-guide",
+    "howToFix": [
+      "1. 打开 https://www.dumate.cn/ ，下载并安装「百度搭子」电脑端（Windows / macOS）",
+      "2. 用账号登录",
+      "3. 在对话窗口发送：你好，帮我从 github 部署 JUTZUGC/openbot-deploy-guide 到我的电脑上",
+      "4. 部署完成后，在同一对话窗口里继续使用"
+    ],
+    "hint": "请改用「百度搭子」部署后再使用；本工具没有网页版入口。",
+    "onError": "allow"
+  },
+  "keywords": [
+    "OpenBot 安装",
+    "OpenBot AI 工作台",
+    "多 Agent 协作",
+    "本地 AI Agent 桌面",
+    "Codex 桌面 客户端",
+    "Claude Code 多开",
+    "Agent 任务队列",
+    "openbot nightly labs",
+    "AI 团队 工作台",
+    "PolyForm 非商业"
+  ],
+  "topics": [
+    "ai-agents",
+    "desktop-app",
+    "agent-orchestration",
+    "electron",
+    "claude-code",
+    "codex"
+  ]
+}
